@@ -24,7 +24,7 @@ Implementations of iterated local search (ILS), improved hybrid genetic algorith
 
 * `make clean`: Clean all the results from last run.
 * `make run`: Directly run the main.py according to its default settings.
-* `make ils/ts/ga`: You can modify the MAKEFIlE to change the test file you want to perform on. By doing this and execute this command, you perform the according algorithm on the specified test file.
+* `make ils/ts/ga`: You can modify the MAKEFIlE to change the test file you want to perform on. By doing this and executing this command, the according algorithm will be performed on the specified test file.
 * or...you can choose to compile the scripts manually.
 
 ### Ref:
