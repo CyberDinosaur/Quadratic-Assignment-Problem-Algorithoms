@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-bac89d4de3090de1b37a65315322328e"}, "mark": {"type": "circle", "size": 100}, "encoding": {"color": {"field": "Algorithm", "scale": {"scheme": "category20"}, "type": "nominal"}, "tooltip": [{"field": "Algorithm", "type": "nominal"}], "x": {"field": "Time(s)", "type": "quantitative"}, "y": {"field": "Best_objective_value", "scale": {"domain": [21200000, 22600000]}, "type": "quantitative"}}, "height": 300, "title": "Algorithm Performance", "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-bac89d4de3090de1b37a65315322328e": [{"Algorithm": "ts_20", "Time(s)": 547.177774, "Best_objective_value": 21731166}, {"Algorithm": "ts_50", "Time(s)": 540.578225, "Best_objective_value": 21690850}, {"Algorithm": "ils_2-opt", "Time(s)": 618.473354, "Best_objective_value": 21531286}, {"Algorithm": "ils_3-opt", "Time(s)": 31.371288, "Best_objective_value": 22178180}, {"Algorithm": "ils_4-opt", "Time(s)": 44.913609, "Best_objective_value": 22429246}, {"Algorithm": "ga_tournament", "Time(s)": 2807.842844, "Best_objective_value": 21417980}, {"Algorithm": "ga_roulette_wheel", "Time(s)": 2766.687726, "Best_objective_value": 21492098}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
